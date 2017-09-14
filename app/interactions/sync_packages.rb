@@ -11,7 +11,6 @@ class SyncPackages < ActiveInteraction::Base
 
       @date = date
       page(date).items.each do |repo|
-        next if repo.full_name == 'elm-lang/core'
         SyncPackageJob.perform_later repo.full_name
       end
     end

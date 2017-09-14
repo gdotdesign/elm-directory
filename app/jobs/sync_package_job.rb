@@ -6,6 +6,7 @@ class SyncPackageJob < ApplicationJob
   queue_as :default
 
   def perform(repository)
+    return if repository == 'elm-lang/core'
     SyncPackage.run repository: repository
   end
 end
