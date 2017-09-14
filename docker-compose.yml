@@ -1,0 +1,19 @@
+version: '3'
+services:
+  redis:
+    image: redis
+  db:
+    image: postgres
+  web:
+    build: .
+    command: bundle exec foreman start
+    environment:
+      - DATABASE_URL=postgres://db:5432/elm_directory_development
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - .:/myapp
+    ports:
+      - 3000:5000
+    depends_on:
+      - redis
+      - db
