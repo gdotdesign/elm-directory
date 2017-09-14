@@ -1,0 +1,7 @@
+.packages-page
+  %h2.packages-page__title.packages-page__title--margin-bottom
+    %i.ion-person
+    Packages by
+    %b= params[:author].to_s
+
+  = render 'packages', packages: @packages

@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false

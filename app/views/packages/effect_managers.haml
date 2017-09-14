@@ -1,0 +1,11 @@
+.packages-page
+  %h2.packages-page__title
+    %i.ion-wand
+    Effect Manager Packages
+
+  .packages-page__summary
+    These packages contain
+    %b Effect Modules
+    which used handle side effects, like timers or pub-sub systems.
+
+  = render 'packages', packages: @packages, pagination: true

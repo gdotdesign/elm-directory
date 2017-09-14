@@ -1,0 +1,40 @@
+- version = package.latest_version
+
+.package
+  .package__row
+    .package__row__left
+      .package__name
+        = link_to repo_root_path(package.author, package.repo) do
+          = search_highlighted package.repository
+          .package__latest_version
+            = version.version
+
+      .package__summary
+        = search_highlighted version.package_json['summary']
+
+    .package__icons
+      - if version.effect_manager?
+        %i.ion-wand.package__icon{ title: 'Contains effect manager(s)' }
+
+      - if version.experimental?
+        %i.ion-erlenmeyer-flask.package__icon{ title: 'Experimental package' }
+
+      - if version.native?
+        %i.ion-alert-circled.package__icon{ title: 'Contains native modules' }
+
+  .package__infos
+    = link_to repo_author_path(package.author) do
+      %img{ src: "https://github.com/#{package.author}.png?size=20",
+            alt: package.author }
+      %span= package.author
+
+    - if package.pushed_at
+      .package__pushed_at
+        %i.ion-android-time
+        = distance_of_time_in_words(Time.now, package.pushed_at)
+        ago
+
+    .package__stars
+      %i.ion-star
+      = package.stars
+

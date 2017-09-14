@@ -1,0 +1,89 @@
+.package {
+  border: 1px solid rgba(#000, 0.05);
+  border-radius: 2px;
+  background: #FFF;
+  padding: 10px;
+
+  flex-direction: column;
+  display: inline-flex;
+
+  &__row {
+    display: flex;
+    flex: 1;
+
+    &__left {
+      flex: 1;
+    }
+  }
+
+  &__summary {
+    font-size: 14px;
+    opacity: 0.75;
+  }
+
+  img {
+    border-radius: 2px;
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+  }
+
+  &__name {
+    margin-bottom: 3px;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+
+  &__latest_version {
+    font-size: 14px;
+    display: inline;
+    color: #999;
+  }
+
+  &__icons {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
+    display: flex;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__icon {
+    font-size: 20px;
+  }
+
+  &__pushed_at {
+    margin-right: 10px;
+  }
+
+  &__infos {
+    border-top: 1px solid rgba(#000, 0.05);
+    padding-top: 5px;
+    margin-top: 10px;
+    height: 30px;
+
+    align-items: center;
+    font-size: 14px;
+    display: flex;
+
+    color: #999;
+
+    i.ion-android-time {
+      position: relative;
+      top: 1px;
+    }
+
+    a {
+      text-decoration: none;
+      margin-right: auto;
+      color: inherit;
+      display: flex;
+    }
+  }
+}

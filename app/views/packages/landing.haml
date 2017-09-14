@@ -1,0 +1,50 @@
+.hero
+  %h1
+    Find and read documentation
+    %br
+    of Elm packages.
+
+  %form
+    %input{ placeholder: 'Find packages...',
+            name: 'search',
+            autofocus: '',
+            value: params[:search] }
+    %i.ion-search
+
+    = link_to packages_path do
+      = Package.visible.count
+      total packages
+      %i.ion-ios-arrow-right
+
+    = link_to native_packages_path do
+      = Package.native.count
+      packages with native modules
+      %i.ion-ios-arrow-right
+
+    = link_to effect_manager_packages_path do
+      = Package.effect_manager.count
+      packages with effect managers
+      %i.ion-ios-arrow-right
+
+.packages-page
+  %h2.packages-page__title.packages-page__title--margin-bottom
+    %i.ion-ios-star
+    Most Starred Packages
+
+    = link_to packages_path do
+      %span See All
+      %i.ion-ios-arrow-right
+      %i.ion-ios-arrow-right
+
+  = render 'packages', packages: @packages
+
+  %h2.packages-page__title.packages-page__title--margin-full
+    %i.ion-android-time
+    Recently Updated
+
+    = link_to recently_updated_path do
+      %span See All
+      %i.ion-ios-arrow-right
+      %i.ion-ios-arrow-right
+
+  = render "packages", packages: @recent

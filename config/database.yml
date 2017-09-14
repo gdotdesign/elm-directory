@@ -1,0 +1,14 @@
+default: &default
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  password: postgres
+  encoding: unicode
+  user: postgres
+
+development:
+  <<: *default
+  database: elm_directory_development
+
+test:
+  <<: *default
+  database: elm_directory_test

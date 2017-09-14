@@ -1,0 +1,10 @@
+.packages-page
+  %h2.packages-page__title.packages-page__title--margin-bottom
+    %i.ion-search
+    Search results for:
+    %b= params[:search]
+
+  - if @packages.empty?
+    No packages found.
+  - else
+    = render 'packages', packages: @packages, pagination: true

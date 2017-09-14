@@ -1,0 +1,55 @@
+$primary: #E25644;
+$link: #29C;
+
+@import 'version_detail';
+@import 'packages_page';
+@import 'markdown_body';
+@import 'breadcrumbs';
+@import 'pagination';
+@import 'packages';
+@import 'package';
+@import 'hero';
+@import 'nav';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Noto Sans;
+  flex-direction: column;
+  background: #FAFAFA;
+  min-height: 100vh;
+  display: flex;
+  color: #444;
+  margin: 0;
+}
+
+article {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.footer {
+  text-align: center;
+  line-height: 50px;
+  margin-top: 50px;
+  background: #333;
+  font-size: 14px;
+  padding: 0 20px;
+  color: #AAA;
+
+  @media (max-width: 900px) {
+    line-height: 30px;
+    font-size: 8px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  span:first-child {
+    font-weight: 600;
+  }
+}

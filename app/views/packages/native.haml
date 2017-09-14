@@ -1,0 +1,12 @@
+.packages-page
+  %h2.packages-page__title
+    %i.ion-alert-circled
+    Native Packages
+
+  .packages-page__summary
+    These packages have
+    %b Native (plain JavaScript)
+    code in them so they may throw runtime errors, be careful with them.
+    They are usually bindings to Web APIs like local storage or geolocation.
+
+  = render 'packages', packages: @packages, pagination: true

@@ -1,0 +1,10 @@
+- scope = local_assigns[:pagination] ? packages.page(params[:page]).per(30) : packages
+
+.packages
+  - scope.each do |package|
+    = render 'package', package: package
+
+- if local_assigns[:pagination]
+  = paginate scope
+  - set_meta_tags next: path_to_next_page(scope)
+  - set_meta_tags prev: path_to_prev_page(scope)

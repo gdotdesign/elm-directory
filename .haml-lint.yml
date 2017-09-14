@@ -1,0 +1,8 @@
+skip_frontmatter: true
+
+linters:
+  AltText:
+    enabled: true
+
+  LineLength:
+    enabled: false

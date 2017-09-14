@@ -1,0 +1,15 @@
+%a{ name: name }
+.version-detail__method
+  %a.version-detail__method__definition{ href: "##{name}" }
+    %pre.definition
+      %code.elm
+        = code.split(':').first
+    %pre.definition
+      %code :
+    %pre.definition
+      %code.elm
+        = code.split(':')[1..-1].join(':')
+  .version-detail__method__body<
+    - unless comment.blank?
+      = preserve do
+        != GitHub::Markup.render('a.md', comment)

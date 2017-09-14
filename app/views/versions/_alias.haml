@@ -1,0 +1,10 @@
+%a{ name: name }
+.version-detail__alias
+  %a.version-detail__alias__definition{ href: "##{name}" }
+    %pre.definition
+      %code.elm
+        = code
+  .version-detail__alias__body<
+    - unless comment.blank?
+      = preserve do
+        != GitHub::Markup.render('a.md', comment)

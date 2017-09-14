@@ -1,0 +1,94 @@
+.hero {
+  background-image: image-url('hero.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-color: $primary;
+  background-size: auto;
+  height: 500px;
+  color: #FFF;
+
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  @media (max-width: 800px) {
+    background-size: auto 250px;
+    height: 400px;
+  }
+
+  @media (max-width: 960px) {
+    border-top: 1px solid rgba(#000, 0.1);
+  }
+
+  h1 {
+    font-family: Raleway;
+    text-align: center;
+    font-weight: 300;
+    font-size: 40px;
+    margin-top: 0;
+
+    @media (max-width: 800px) {
+      padding: 0 20px;
+      font-size: 30px;
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    line-height: 30px;
+    color: inherit;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:first-of-type {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 800px) {
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  form {
+    position: relative;
+    width: 780px;
+
+    @media (max-width: 800px) {
+      width: calc(100vw - 60px);
+    }
+
+    > i {
+      color: mix(#666, $primary, 70%);
+      position: absolute;
+      font-size: 30px;
+      right: 10px;
+      top: 0;
+    }
+  }
+
+  input {
+    box-shadow: 0 0 0 5px rgba(#000, 0.1);
+    color: mix(#666, $primary, 70%);
+    border-radius: 5px;
+    background: #FFF;
+    appearance: none;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    border: 0;
+
+    &::placeholder {
+      color: mix(#999, $primary, 60%);
+    }
+  }
+}
